@@ -22,7 +22,7 @@ const portfolioConfig = {
     email: "sunkara.bhairav@example.com",
     availabilityBadge: "Available for Opportunities",
     isAvailable: true,
-    avatar: "./assets/images/avatar.jpg", // Path to profile image
+    avatar: "./assets/images/avatar.png", // Path to profile image
     resumeUrl: "#contact", // Link to your resume PDF or contact
   },
 
