@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunkara Bhairav — Creative Developer</title>
+  
+  <!-- SEO & Social Graph Meta Tags -->
+  <meta name="description" content="Personal portfolio of Sunkara Bhairav, a Senior Creative Developer building high-end digital experiences, scalable web applications, and intuitive user interfaces." />
+  <meta name="keywords" content="Creative Developer, Full Stack Engineer, React, TypeScript, UI Architect, Portfolio, WebGL, Design Systems" />
+  <meta name="author" content="Sunkara Bhairav" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#08090D" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sunkarabhairav.dev/" />
+  <meta property="og:title" content="Sunkara Bhairav — Creative Developer" />
+  <meta property="og:description" content="Bridging the intersection of engineering precision and high-end visual design. Explore featured case studies, skill matrix, and career milestones." />
+  <meta property="og:image" content="./assets/images/project-nexus-ai.jpg" />
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sunkara Bhairav — Creative Developer" />
+  <meta name="twitter:description" content="Futuristic, minimal personal portfolio with dark theme and smooth interactions." />
+  <meta name="twitter:image" content="./assets/images/project-nexus-ai.jpg" />
+
+  <!-- Custom Favicon -->
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            deep: '#08090D',
+            accentPurple: '#8B5CF6',
+            accentCyan: '#22D3EE'
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'Inter', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace']
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Lucide Icons Script -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Portfolio Stylesheet -->
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+
+  <!-- Interactive Ambient Canvas Background -->
+  <canvas id="ambient-canvas"></canvas>
+
+  <!-- Navigation Bar -->
+  <header class="navbar-wrapper" id="main-navbar">
+    <nav class="navbar-container" aria-label="Main Navigation">
+      <a href="#hero" class="logo-brand" id="nav-brand-mount">
+        <div class="logo-icon-box">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>Sunkara Bhairav</span>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <div class="nav-links" id="nav-links-mount"></div>
+
+      <!-- Quick Action / CTA -->
+      <div style="display: flex; align-items: center; gap: 0.75rem;">
+        <a href="#contact" class="btn-primary nav-cta-btn" style="padding: 0.55rem 1.25rem; font-size: 0.875rem;">
+          Let's Talk
+        </a>
+
+        <!-- Mobile Hamburger Button -->
+        <button class="mobile-toggle-btn" id="mobile-toggle-btn" aria-label="Toggle mobile menu" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile Drawer Menu -->
+  <div class="drawer-backdrop" id="drawer-backdrop"></div>
+  <aside class="mobile-drawer" id="mobile-drawer" aria-label="Mobile Navigation Menu">
+    <div class="drawer-header">
+      <span class="logo-brand" style="font-size: 1.1rem;">Menu</span>
+      <button id="drawer-close-btn" class="modal-close-btn" aria-label="Close menu" style="position: static;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="drawer-links" id="mobile-drawer-nav"></div>
+  </aside>
+
+  <!-- Main Content Container -->
+  <main class="app-container">
+    
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+      <div id="hero-mount" style="width: 100%;"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div id="about-mount"></div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+      <div id="skills-mount"></div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section id="projects" class="projects-section">
+      <div id="projects-mount"></div>
+    </section>
+
+    <!-- Experience & Education Timeline Section -->
+    <section id="timeline" class="timeline-section">
+      <div id="timeline-mount"></div>
+    </section>
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="achievements-section">
+      <div id="achievements-mount"></div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div id="contact-mount"></div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer-wrapper" id="footer-mount"></footer>
+
+  <!-- Floating Back to Top Button -->
+  <button class="back-to-top-btn" id="back-to-top-btn" aria-label="Back to top" title="Back to top">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m18 15-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Case Study Deep Dive Modal -->
+  <div class="modal-overlay" id="case-study-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-content-box">
+      <button class="modal-close-btn" id="modal-close-btn" aria-label="Close case study modal">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div id="modal-body-content"></div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- Application Scripts -->
+  <script src="./js/portfolio.config.js"></script>
+  <script src="./js/canvas-bg.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+</html>
